@@ -1,0 +1,70 @@
+<main role="main" class="container">
+  <h2 class="mt-3">Prueba Desarrollo FrontEnd</h2>
+  <p class="mt-5">Presiona el botón para cargar el archivo <b>ubigeos.txt </b>
+    <span>
+      <button type="button" class="btn btn-info" (click)="readTextFile()" data-toggle="collapse" data-target="#tables">Cargar</button>
+    </span>
+  </p>
+
+  <div id="tables" class="collapse">
+    <h4 class="mt-3">Departamentos</h4>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Código</th>
+          <th>Nombre</th>
+          <th>Código Padre</th>
+          <th>Descripción Padre</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let departamento of departamentos">
+          <td>{{departamento.codigo}}</td>
+          <td>{{departamento.nombre}}</td>
+          <td>-</td>
+          <td>-</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h4 class="mt-3">Provincias</h4>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Código</th>
+          <th>Nombre</th>
+          <th>Código Padre</th>
+          <th>Descripción Padre</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let provincia of provincias">
+          <td>{{provincia.codigo}}</td>
+          <td>{{provincia.nombre}}</td>
+          <td>{{provincia.codigoPadre}}</td>
+          <td>{{provincia.descripcionPadre}}</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h4 class="mt-3">Distritos</h4>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Código</th>
+          <th>Nombre</th>
+          <th>Código Padre</th>
+          <th>Descripción Padre</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let distrito of distritos">
+            <td>{{distrito.codigo}}</td>
+            <td>{{distrito.nombre}}</td>
+            <td>{{distrito.codigoPadre}}</td>
+            <td>{{distrito.descripcionPadre}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</main>

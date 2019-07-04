@@ -1,16 +1,25 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpClientModule }    from '@angular/common/http';
 
 import { AppComponent } from './app.component';
+import { ProcessFileComponent } from './components/process-file/process-file.component';
+import { AccessFilesService } from './services/access-files.service';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ProcessFileComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    HttpClientModule,
+    CommonModule
   ],
-  providers: [],
+  providers: [
+    AccessFilesService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
